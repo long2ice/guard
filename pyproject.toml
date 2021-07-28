@@ -3,13 +3,32 @@ name = "guard"
 version = "0.1.0"
 description = "A light alternative for Sentry"
 authors = ["long2ice <long2ice@gmail.com>"]
+license = "Apache-2.0"
+readme = "README.md"
+homepage = "https://github.com/long2ice/guard"
+repository = "https://github.com/long2ice/guard.git"
+documentation = "https://github.com/long2ice/guard"
+keywords = ["sentry", "exception"]
+packages = [
+    { include = "guard" }
+]
+include = ["CHANGELOG.md", "LICENSE", "README.md"]
 
 [tool.poetry.dependencies]
 python = "^3.7"
 better-exceptions = "*"
+typer = "*"
 
 [tool.poetry.dev-dependencies]
+flake8 = "*"
+isort = "*"
+black = "*"
+pytest = "*"
+pytest-xdist = "*"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+aerich = "guaed.main:main"
