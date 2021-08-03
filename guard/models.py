@@ -10,5 +10,6 @@ class Project(Model):
 
 class Log(Model):
     project = fields.ForeignKeyField("models.Project")
+    content = fields.TextField()
     created_at = fields.DatetimeField(auto_now_add=True)
     updated_at = fields.DatetimeField(auto_now=True)

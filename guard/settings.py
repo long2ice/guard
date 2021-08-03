@@ -1,9 +1,18 @@
-from dynaconf import Dynaconf
+from pydantic import BaseSettings
 
-settings = Dynaconf(
-    envvar_prefix="GUARD",
-    settings_files=["config.yaml"],
-)
+
+class Settings(BaseSettings):
+    debug: bool
+    db_url: str
+    redis_url: str
+    server_host: str
+    server_port: int
+
+    class Config:
+        env_file = ".env"
+
+
+settings = Settings()
 
 TORTOISE_ORM = {
     "connections": {"default": settings.db_url},

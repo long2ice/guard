@@ -1,2 +1,0 @@
-db_url: mysql://root:123456@127.0.0.1:3306/guard
-broker_url: redis://localhost:6379/0
