@@ -1,15 +1,32 @@
 [tool.poetry]
+authors = ["long2ice <long2ice@gmail.com>"]
+description = "A light alternative for Sentry"
 name = "guard"
 version = "0.1.0"
-description = "A light alternative for Sentry"
-authors = ["long2ice <long2ice@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.7"
-better-exceptions = "*"
+fastapi = "*"
+tortoise-orm = "*"
+uvicorn = "*"
+dynaconf = "*"
+asyncmy = "*"
+asyncpg = "*"
+aioredis = "*"
 
 [tool.poetry.dev-dependencies]
+# test
+pytest = "*"
+pytest-asyncio = "*"
+pytest-mock = "*"
+pytest-sugar = "*"
+pytest-xdist = "*"
+# lint
+black = "*"
+flake8 = "*"
+isort = "*"
+mypy = "*"
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=1.0.0"]
